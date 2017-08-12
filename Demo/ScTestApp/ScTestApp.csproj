@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSetAddingDatabaseEntries.cs" />
     <Compile Include="TestSetAlwaysFailing.cs" />
     <Compile Include="TestSetAlwaysPassing.cs" />
   </ItemGroup>
