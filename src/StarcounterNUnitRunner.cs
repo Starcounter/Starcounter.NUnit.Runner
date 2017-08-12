@@ -31,11 +31,11 @@ namespace Starcounter.NUnit.Runner
             string[] args;
             if (string.IsNullOrEmpty(testResultFullPath))
             {
-                args = new string[] { "--noresult" };
+                args = new string[] { "--noresult", "--noheader" };
             }
             else
             {
-                args = new string[] { $"--result={testResultFullPath}" };
+                args = new string[] { $"--result={testResultFullPath}", "--noheader" };
             }
 
             Start(args);
