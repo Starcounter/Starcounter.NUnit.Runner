@@ -27,7 +27,7 @@ Using:
 * nunit.framework 3.7.1
 * nunitlite 3.7.1
 
-A `NUnit` runner which executes tests as a NUnit console application in the same AppDomain as the Starcounter database. 
+A `NUnit` runner which executes tests as a NUnit console application in the same AppDomain as the Starcounter database. It wraps `NUniteLite` runner which means that all the (NUnitLite-Options)[https://github.com/nunit/docs/wiki/NUnitLite-Options] are available for use.
 
 ### Starcounter.NUnit.Runner.StarcounterNUnitRunner API
 ```c#
