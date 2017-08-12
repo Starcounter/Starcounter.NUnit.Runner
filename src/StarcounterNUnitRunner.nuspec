@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Starcounter.NUnit.Runner</id>
+    <version>1.0.0</version>
+    <title>Starcounter.NUnit.Runner</title>
+    <authors>Starcounter</authors>
+    <owners>Starcounter</owners>
+    <projectUrl>https://github.com/Starcounter/Starcounter.NUnit.Runner</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NUnit console runner for executing tests in the same domain as the Starcounter database</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Starcounter NUnit NUnitLite</tags>
+  </metadata>
+  <files>
+    <file src="weaver.ignore" target="content" />
+  </files>
+</package>
