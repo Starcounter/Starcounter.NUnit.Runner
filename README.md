@@ -31,7 +31,28 @@ A `NUnit` runner which executes tests as a NUnit console application in the same
 
 ### Starcounter.NUnit.Runner.StarcounterNUnitRunner API
 ```c#
-//TODO
+//
+// Summary:
+//     NUnit runner for executing tests from the calling assembly using NUnitLite
+public StarcounterNUnitRunner();
+
+//
+// Summary:
+//     Starts execution of test collection from calling assembly.
+//
+// Parameters:
+//   testResultFullPath:
+//     Full path to test result xml file. No file will be generated if unset.
+public void Start(string testResultFullPath = null);
+
+//
+// Summary:
+//     Starts execution of test collection from calling assembly.
+//
+// Parameters:
+//   args:
+//     See argument options from https://github.com/nunit/docs/wiki/NUnitLite-Options
+public void Start(string[] args);
 ```
 
 ## Demo\ScTestApp
@@ -50,19 +71,19 @@ Errors, Failures and Warnings
   This assertion will always fail
   Expected: True
   But was:  False
-at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_1() in C:\Github\Starcounter\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 16
+at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_1() in C:\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 16
 
 2) Failed : ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_2
   This assertion will always fail
   Expected: True
   But was:  False
-at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_2() in C:\Github\Starcounter\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 22
+at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_2() in C:\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 22
 
 3) Failed : ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_3
   This assertion will always fail
   Expected: True
   But was:  False
-at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_3() in C:\Github\Starcounter\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 28
+at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_3() in C:\Starcounter.NUnit.Runner\Demo\ScTestApp\TestSetAlwaysFailing.cs:line 28
 
 Run Settings
     Number of Test Workers: 8
