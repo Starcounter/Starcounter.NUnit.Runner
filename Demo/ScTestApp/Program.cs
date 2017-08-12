@@ -9,7 +9,6 @@ namespace ScTestApp
         static void Main()
         {
             StarcounterNUnitRunner runner = new StarcounterNUnitRunner();
-            //runner.testResultFullPath = @"C:\Temp\TestResult.xml";
             runner.Start();
         }
     }

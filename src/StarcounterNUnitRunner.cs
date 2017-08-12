@@ -11,31 +11,46 @@ namespace Starcounter.NUnit.Runner
     public class StarcounterNUnitRunner
     {
         private readonly Assembly callingAssembly;
-        public string testResultFullPath = null;
-        // TODO: add field for nunit console arguments, https://github.com/nunit/docs/wiki/NUnitLite-Options
 
+        /// <summary>
+        ///     NUnit runner for executing tests from the calling assembly using NUnitLite
+        /// </summary>
         public StarcounterNUnitRunner()
         {
             callingAssembly = Assembly.GetCallingAssembly();
         }
 
-        public void Start()
+        /// <summary>
+        ///     Starts execution of test collection from calling assembly.
+        /// </summary>
+        /// <param name="testResultFullPath">
+        ///     Full path to test result xml file. No file will be generated if unset.
+        /// </param>
+        public void Start(string testResultFullPath = null)
         {
-            var textRunner = new TextRunner(callingAssembly);
-            int resultInt = 0;
             string[] args;
             if (string.IsNullOrEmpty(testResultFullPath))
             {
                 args = new string[] { "--noresult" };
-                //args = new string[] { "--noheader", "--noresult" };
-                //args = new string[] { "--explore" };
             }
             else
             {
                 args = new string[] { $"--result={testResultFullPath}" };
             }
 
-            resultInt = textRunner.Execute(args);
+            Start(args);
+        }
+
+        /// <summary>
+        ///     Starts execution of test collection from calling assembly. 
+        /// </summary>
+        /// <param name="args">
+        ///     See argument options from https://github.com/nunit/docs/wiki/NUnitLite-Options
+        /// </param>
+        public void Start(string[] args)
+        {
+            var textRunner = new TextRunner(callingAssembly);
+            int resultInt = textRunner.Execute(args);
         }
     }
 }
