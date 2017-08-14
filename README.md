@@ -1,6 +1,8 @@
 # Starcounter.NUnit.Runner
 `NUnit` console runner for executing tests in the same domain as the Starcounter database which makes it possible to use any of the Starcounter platform functionality within a test. Hence, it fills the gap where Starcounter version `2.3` lacks the functionality to connect to the Starcounter database programmatically, also known as Self-hosting apps. 
 
+`Starcounter.NUnit.Runner` is essentially a wrapper of `nunitlite.dll` which executes all tests found within the calling assembly.
+
 ## How to use it
 * Create a normal Starcounter App, version 2.3. Make sure it targets `.NET Framework 4.5.2` or above.
 * Add reference to `StarcounterNUnitRunner.dll` through nuget: `Install-Package Starcounter.NUnit.Runner`
@@ -19,7 +21,7 @@ Scheduling.ScheduleTask(() =>
 }, waitForCompletion: true);
 ```
 Make sure to set `waitForCompletion = true` because `NUnit` may execute tests in parallel.
-* Compile and deploy the Starcounter test App as any other Starcounter App, `star.exe <StarcounterTestApp>.exe`. The test result should be displayed in the console.
+* Compile and deploy the Starcounter test App as any other Starcounter App, `star.exe <StarcounterTestApp>.exe`. The tests will be executed on deployment and the result should be displayed in the console. 
 
 ## StarcounterNUnitRunner
 Using:
@@ -87,8 +89,7 @@ at ScTestApp.TestSetAlwaysFailing.TestCase_AlwaysFailing_3() in C:\Starcounter.N
 
 Run Settings
     Number of Test Workers: 8
-    Internal Trace: OffProgram Files\Starcounter
-
+    Internal Trace: Off
 
 Test Run Summary
   Overall result: Failed
