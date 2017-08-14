@@ -5,7 +5,7 @@
 
 ## How to use it
 * Create a normal Starcounter App, version 2.3. Make sure it targets `.NET Framework 4.5.2` or above.
-* Add reference to `StarcounterNUnitRunner.dll` through nuget: `Install-Package Starcounter.NUnit.Runner`
+* Add reference to `StarcounterNUnitRunner.dll` through nuget: `Install-Package Starcounter.NUnit.Runner`. Note that `nunitlite.dll` (nuget reference NUnitLite) will add Program.cs and Program.vb files, remove them and continue.
 * Set `<CopyToOutputDirectory>Always</CopyToOutputDirectory>` for the added `weaver.ignore` content file. 
 * Include namespace `Starcounter.NUnit.Runner` and create an instance of `StarcounterNUnitRunner` in `Main()`
 ```c#
